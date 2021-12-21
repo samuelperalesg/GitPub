@@ -1,7 +1,9 @@
 // require dependencies
 const express = require('express')
-const { get } = require('express/lib/response')
+const drinks = require("./models/drinks")
 const port = 3000
+
+
 // initialize the express app
 const app = express()
 
@@ -12,8 +14,12 @@ const app = express()
 // mount middleware
 
 // mount routes
-app.get("/GitPub", (req, res) => {
+app.get("/GitPub/", (req, res) => {
   res.send("Welcome to the GitPub App")
+})
+
+app.get("/GitPub/drinks/", (req, res) => {
+  res.send(drinks)
 })
 
 // tell the app to listen for requests
