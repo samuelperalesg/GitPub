@@ -18,8 +18,8 @@ app.get("/GitPub/", (req, res) => {
   res.send("Welcome to the GitPub App")
 })
 
-app.get("/GitPub/drinks/", (req, res) => {
-  res.send(drinks)
+app.get("/drinks/", (req, res) => {
+  res.render('drinks_index.ejs')
 })
 
 // tell the app to listen for requests
