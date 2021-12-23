@@ -8,16 +8,11 @@
 </head>
 <body>
   <h1>Welcome to GitPub</h1>
-
-  <ul style="text-transform: capitalize;">
-    <% for(let i = 0; i < allDrinks.length; i++) { %>
-        <li><a href="/drinks/<%= i %>">
-          <%= allDrinks[i].name %></a></li>        
-    <% } %>
-  </ul>
-
-  <a href="/foods">Food</a>
-
+  <h1>At foo bar</h1>
+  <h2><%= food.name %></h2>
+  <h3>$<%= food.price %></h3>
+  <a href="/foods">Back</a><br>
+  <img src="<%= food.image%>.png" alt="">
   <style>
     body {
       background-color: cornflowerblue;

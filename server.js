@@ -1,6 +1,7 @@
 // require dependencies
 const express = require('express')
 const drinks = require("./models/drinks")
+const foods = require("./models/foods")
 const port = 3000
 
 
@@ -24,10 +25,23 @@ app.get("/drinks/", (req, res) => {
   })
 })
 
+app.get("/foods", (req, res) => {
+  res.render("food_index.ejs", {
+    allFoods: foods
+  })
+})
+
 app.get("/drinks/:indexOfDrinksArray", (req, res) => {
   res.render("drinks_show.ejs", {
     drink: drinks[req.params.indexOfDrinksArray],
     title: `${drinks [req.params.indexOfDrinksArray].name} Show Page`
+  })
+})
+
+app.get("/foods/:indexOfFoodsArray", (req, res) => {
+  res.render("foods_show.ejs", {
+    food: foods[req.params.indexOfFoodsArray],
+    title: `${foods [req.params.indexOfFoodsArray].name} Show Page`
   })
 })
 
